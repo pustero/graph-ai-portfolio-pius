@@ -3,105 +3,420 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pius's Portfolio - Graph AI & Data Analysis</title>
+    <title>Pilar Ustero | GenAI for Work & Research</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --primary: #059669; /* Emerald Green */
+            --dark-green: #064e3b; /* Darker Green for frames */
+            --secondary: #10b981; /* Standard Green */
+            --accent: #f0fdf4; /* Lightest Mint */
+            --dark: #0f172a; /* Near Black for readability */
+            --light: #ffffff; /* Pure White background */
+            --white: #ffffff;
+            --border: #e2e8f0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--light);
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(16, 185, 129, 0.05) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(5, 150, 105, 0.05) 0px, transparent 50%);
+            background-attachment: fixed;
+            color: var(--dark);
             line-height: 1.6;
-            color: #333;
-            max-width: 1000px;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1.2rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(8px);
+            z-index: 1000;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .logo {
+            font-weight: 800;
+            font-size: 1.1rem;
+            letter-spacing: 0.5px;
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+        }
+
+        .nav-links a {
+            color: var(--dark);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        /* Layout */
+        section {
+            padding: 140px 10% 80px;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
-            background-color: #f4f4f9;
         }
-        header {
-            background-color: #2c3e50;
-            color: white;
-            padding: 2rem;
-            text-align: center;
-            border-radius: 8px;
-            margin-bottom: 20px;
-        }
-        .container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
+
         .card {
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
+            background: var(--white);
+            border: 2px solid var(--dark-green); /* Dark green frame */
+            border-radius: 12px;
+            padding: 3.5rem;
+            box-shadow: 0 10px 25px -10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Hero Section */
+        #home {
+            min-height: 80vh;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
         }
-        .card:hover {
-            transform: translateY(-5px);
+
+        .profile-avatar {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--dark-green);
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 25px -5px rgba(5, 150, 105, 0.2);
         }
-        h2 {
-            color: #2c3e50;
-            margin-top: 0;
+
+        .hero-content h1 {
+            font-size: clamp(2.5rem, 8vw, 4.2rem);
+            font-weight: 800;
+            line-height: 1.05;
+            margin-bottom: 1.5rem;
+            color: var(--dark);
+            letter-spacing: -0.02em;
         }
-        .btn {
+
+        .pilar-name {
+            color: var(--white);
+            background-color: var(--primary);
+            padding: 4px 20px;
+            border-radius: 4px;
             display: inline-block;
-            background: #3498db;
-            color: white;
-            padding: 10px 15px;
+            margin-bottom: 10px;
+            box-shadow: 0 10px 20px -5px rgba(5, 150, 105, 0.3);
+        }
+
+        .hero-content p {
+            font-size: 1.25rem;
+            color: #475569;
+            max-width: 650px;
+            margin: 0 auto 2.5rem;
+            font-weight: 400;
+        }
+
+        /* Title Styling */
+        .section-header {
+            margin-bottom: 3rem;
+            text-align: left;
+        }
+
+        .section-header h2 {
+            font-size: 2.25rem;
+            font-weight: 700;
+            color: var(--dark);
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 40px;
+            height: 4px;
+            background: var(--primary);
+            border-radius: 2px;
+        }
+
+        /* About Grid */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 5rem;
+            align-items: start;
+        }
+
+        .bio-text p {
+            font-size: 1.1rem;
+            color: #334155;
+            margin-bottom: 1.5rem;
+        }
+
+        .experience-list {
+            background: var(--accent);
+            padding: 2rem;
+            border-radius: 8px;
+            border: 2px solid var(--dark-green); /* Dark green frame */
+        }
+
+        .exp-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .exp-item:last-child { margin-bottom: 0; }
+
+        .exp-item h4 {
+            font-size: 1rem;
+            color: var(--primary);
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+        }
+
+        .exp-item p {
+            font-size: 0.9rem;
+            color: #475569;
+            font-weight: 500;
+        }
+
+        /* Modules */
+        .module-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .module-item {
+            padding: 2rem;
+            border: 2px solid var(--dark-green); /* Dark green frame */
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            background: var(--white);
+        }
+
+        .module-item:hover {
+            background: var(--accent);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px -5px rgba(5, 150, 105, 0.1);
+        }
+
+        .module-item h3 {
+            font-size: 1.1rem;
+            margin: 0.75rem 0;
+            color: var(--dark);
+        }
+
+        .module-item p {
+            font-size: 0.9rem;
+            color: #64748b;
+        }
+
+        /* Submissions */
+        .subs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .sub-box {
+            padding: 2.5rem;
+            border: 2px solid var(--dark-green); /* Dark green frame */
+            border-radius: 12px;
+            text-align: center;
+            transition: 0.3s;
+            background: var(--white);
+            text-decoration: none; /* Remove underline from links */
+            display: block; /* Make the whole box clickable */
+        }
+
+        .sub-box.inactive {
+            border-style: dashed;
+            opacity: 0.7;
+        }
+
+        .sub-box.active {
+            background: var(--accent);
+            box-shadow: 0 4px 12px rgba(5, 150, 105, 0.1);
+        }
+
+        .sub-box h4 {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .btn {
+            background: var(--primary);
+            color: var(--white);
+            padding: 1rem 2.5rem;
+            border-radius: 6px;
             text-decoration: none;
-            border-radius: 5px;
-            margin-top: 10px;
-            text-align: center;
+            font-weight: 700;
+            display: inline-block;
+            transition: 0.3s;
         }
+
         .btn:hover {
-            background: #2980b9;
+            background: var(--dark-green);
+            transform: translateY(-2px);
         }
+
         footer {
+            padding: 6rem 10% 4rem;
+            background: #f8fafc;
+            border-top: 1px solid var(--border);
             text-align: center;
-            margin-top: 40px;
-            padding: 20px;
-            font-size: 0.9em;
-            color: #666;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+            color: #94a3b8;
+        }
+
+        @media (max-width: 900px) {
+            .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+            section { padding: 100px 5% 60px; }
+            .hero-content h1 { font-size: 3rem; }
         }
     </style>
 </head>
 <body>
 
-<header>
-    <h1>Pius's Graph AI Portfolio</h1>
-    <p>Exploring the intersection of Data Science, AI, and Graph Analysis</p>
-</header>
-
-<div class="container">
-    <div class="card">
-        <div>
-            <h2>Workshop 1: Graph Basics</h2>
-            <p>An introduction to graph theory and initial data explorations using AI-assisted workflows.</p>
+    <nav>
+        <div class="logo">P. USTERO</div>
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#about">Profile</a>
+            <a href="#course">Course</a>
+            <a href="#submissions">Work</a>
         </div>
-        <a href="https://github.com/pustero/graph-ai-portfolio-pius" class="btn" target="_blank">View Repository</a>
-    </div>
+    </nav>
 
-    <div class="card">
-        <div>
-            <h2>Workshop 2: Automated Data Analysis</h2>
-            <p>Analyzed Gapminder data to explore relationships between two global indicators using AI tools to automate insights and reporting.</p>
+    <section id="home">
+        <img src="https://github.com/pustero/graph-ai-portfolio-pius/blob/main/Screenshot%202026-01-18%20at%2019.36.07.png?raw=true" alt="Pilar Ustero" class="profile-avatar">
+        <div class="hero-content">
+            <h1><span class="pilar-name">Pilar Ustero</span><br>Generative AI for Research</h1>
+            <p>Advancing medical clinical practice through the strategic integration of Large Language Models and automation.</p>
+            <a href="#about" class="btn">View Portfolio</a>
         </div>
-        <a href="https://github.com/pustero/graph-ai-portfolio-pius/blob/main/Workshops_Output.pdf" class="btn" target="_blank">View Project Report</a>
-    </div>
+    </section>
 
-    <div class="card">
-        <div>
-            <h2>Future Research</h2>
-            <p>Upcoming projects focusing on complex network analysis and machine learning models.</p>
+    <section id="about">
+        <div class="card">
+            <div class="section-header">
+                <h2>Professional Profile</h2>
+            </div>
+            <div class="about-grid">
+                <div class="bio-text">
+                    <p>
+                        I am a medical doctor and infectious disease specialist with over 20 years of global experience. Currently a <strong>Clinical Medicine Assistant</strong> at the Hôpitaux Universitaires de Genève (HUG), my work focuses on HIV, hepatitis, and clinical research.
+                    </p>
+                    <p>
+                        This portfolio documents my journey in the "Generative AI for Work & Research" course, where I am developing no-code automation skills to enhance the efficiency and accuracy of medical research and reporting.
+                    </p>
+                </div>
+                <div class="experience-list">
+                    <div class="exp-item">
+                        <h4>Clinical Assistant</h4>
+                        <p>HUG, Geneva</p>
+                    </div>
+                    <div class="exp-item">
+                        <h4>MSc. Infectious Diseases</h4>
+                        <p>LSHTM, London</p>
+                    </div>
+                    <div class="exp-item">
+                        <h4>Field Experience</h4>
+                        <p>MSF (Eswatini & Africa)</p>
+                    </div>
+                </div>
+            </div>
         </div>
-        <button class="btn" style="background: #95a5a6; cursor: not-allowed;">Coming Soon</button>
-    </div>
-</div>
+    </section>
 
-<footer>
-    <p>&copy; 2026 Pius. Built with HTML/CSS and a passion for data.</p>
-</footer>
+    <section id="course">
+        <div class="section-header">
+            <h2>The Curriculum</h2>
+        </div>
+        <div class="module-grid">
+            <div class="module-item">
+                <div class="exp-item"><h4>Week 1-2</h4></div>
+                <h3>Digital Infrastructure</h3>
+                <p>Mastering HTML and AI-assisted web development for scientific communication.</p>
+            </div>
+            <div class="module-item">
+                <div class="exp-item"><h4>Week 3-4</h4></div>
+                <h3>Data & Synthesis</h3>
+                <p>Automated cleaning of clinical datasets and AI-powered literature reviews.</p>
+            </div>
+            <div class="module-item">
+                <div class="exp-item"><h4>Week 5-6</h4></div>
+                <h3>Automation</h3>
+                <p>Developing custom agents for specialized medical and research workflows.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="submissions">
+        <div class="section-header">
+            <h2>Submissions</h2>
+        </div>
+        <div class="subs-grid">
+            <div class="sub-box active">
+                <h4>Submission 01</h4>
+                <p style="font-weight: 700; color: var(--dark);">Portfolio Site</p>
+                <p style="font-size: 0.8rem; margin-top: 10px; color: var(--primary);">COMPLETED</p>
+            </div>
+            
+            <a href="https://github.com/pustero/graph-ai-portfolio-pius/blob/main/Workshops_Output.pdf" target="_blank" class="sub-box active">
+                <h4>Submission 02</h4>
+                <p style="font-weight: 700; color: var(--dark);">Automated Data Analysis</p>
+                <p style="font-size: 0.8rem; margin-top: 10px; color: var(--primary);">VIEW REPORT</p>
+            </a>
+
+            <div class="sub-box inactive">
+                <h4>Submission 03</h4>
+                <p style="color: #94a3b8;">Lit Review Tool</p>
+            </div>
+            <div class="sub-box inactive">
+                <h4>Submission 04</h4>
+                <p style="color: #94a3b8;">Final Capstone</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Pilar Ustero | Generative AI for Work & Research Portfolio</p>
+        <p style="margin-top: 1rem;">Geneva, Switzerland</p>
+    </footer>
 
 </body>
 </html>
