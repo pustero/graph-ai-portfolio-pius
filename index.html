@@ -33,6 +33,9 @@
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
             transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
         .card:hover {
             transform: translateY(-5px);
@@ -49,6 +52,7 @@
             text-decoration: none;
             border-radius: 5px;
             margin-top: 10px;
+            text-align: center;
         }
         .btn:hover {
             background: #2980b9;
@@ -71,20 +75,26 @@
 
 <div class="container">
     <div class="card">
-        <h2>Workshop 1: Graph Basics</h2>
-        <p>An introduction to graph theory and initial data explorations using AI-assisted workflows.</p>
+        <div>
+            <h2>Workshop 1: Graph Basics</h2>
+            <p>An introduction to graph theory and initial data explorations using AI-assisted workflows.</p>
+        </div>
         <a href="https://github.com/pustero/graph-ai-portfolio-pius" class="btn" target="_blank">View Repository</a>
     </div>
 
     <div class="card">
-        <h2>Workshop 2: Automated Data Analysis</h2>
-        <p>An exploration of Gapminder data using AI tools to analyze the relationship between two global indicators and automate insights.</p>
-        <a href="https://github.com/pustero/graph-ai-portfolio-pius/blob/main/Workshops_Output.pdf" class="btn" target="_blank">View Report (PDF)</a>
+        <div>
+            <h2>Workshop 2: Automated Data Analysis</h2>
+            <p>Analyzed Gapminder data to explore relationships between two global indicators using AI tools to automate insights and reporting.</p>
+        </div>
+        <a href="https://github.com/pustero/graph-ai-portfolio-pius/blob/main/Workshops_Output.pdf" class="btn" target="_blank">View Project Report</a>
     </div>
 
     <div class="card">
-        <h2>Future Research</h2>
-        <p>Upcoming projects focusing on complex network analysis and machine learning models.</p>
+        <div>
+            <h2>Future Research</h2>
+            <p>Upcoming projects focusing on complex network analysis and machine learning models.</p>
+        </div>
         <button class="btn" style="background: #95a5a6; cursor: not-allowed;">Coming Soon</button>
     </div>
 </div>
