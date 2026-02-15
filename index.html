@@ -1,9 +1,10 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     
     <script src="https://cdn.botpress.cloud/webchat/v3.5/inject.js"></script>
-<script src="https://files.bpcontent.cloud/2026/02/08/17/20260208170208-1PGGJJO0.js" defer></script>
+    <script src="https://files.bpcontent.cloud/2026/02/08/17/20260208170208-1PGGJJO0.js" defer></script>
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,14 +12,15 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
     <style>
         :root {
-            --primary: #059669; /* Emerald Green */
-            --dark-green: #064e3b; /* Darker Green for frames */
-            --secondary: #10b981; /* Standard Green */
-            --accent: #f0fdf4; /* Lightest Mint */
-            --dark: #0f172a; /* Near Black for readability */
-            --light: #ffffff; /* Pure White background */
+            --primary: #059669;
+            --dark-green: #064e3b;
+            --secondary: #10b981;
+            --accent: #f0fdf4;
+            --dark: #0f172a;
+            --light: #ffffff;
             --white: #ffffff;
             --border: #e2e8f0;
         }
@@ -42,7 +44,6 @@
             overflow-x: hidden;
         }
 
-        /* Navigation */
         nav {
             position: fixed;
             top: 0;
@@ -83,7 +84,6 @@
             color: var(--primary);
         }
 
-        /* Layout */
         section {
             padding: 140px 10% 80px;
             max-width: 1200px;
@@ -92,13 +92,12 @@
 
         .card {
             background: var(--white);
-            border: 2px solid var(--dark-green); /* Dark green frame */
+            border: 2px solid var(--dark-green);
             border-radius: 12px;
             padding: 3.5rem;
             box-shadow: 0 10px 25px -10px rgba(0, 0, 0, 0.1);
         }
 
-        /* Hero Section */
         #home {
             min-height: 80vh;
             display: flex;
@@ -145,7 +144,6 @@
             font-weight: 400;
         }
 
-        /* Title Styling */
         .section-header {
             margin-bottom: 3rem;
             text-align: left;
@@ -170,7 +168,6 @@
             border-radius: 2px;
         }
 
-        /* About Grid */
         .about-grid {
             display: grid;
             grid-template-columns: 1.2fr 0.8fr;
@@ -188,7 +185,7 @@
             background: var(--accent);
             padding: 2rem;
             border-radius: 8px;
-            border: 2px solid var(--dark-green); /* Dark green frame */
+            border: 2px solid var(--dark-green);
         }
 
         .exp-item {
@@ -210,7 +207,6 @@
             font-weight: 500;
         }
 
-        /* Modules */
         .module-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -219,7 +215,7 @@
 
         .module-item {
             padding: 2rem;
-            border: 2px solid var(--dark-green); /* Dark green frame */
+            border: 2px solid var(--dark-green);
             border-radius: 8px;
             transition: all 0.3s ease;
             background: var(--white);
@@ -242,7 +238,6 @@
             color: #64748b;
         }
 
-        /* Submissions */
         .subs-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -251,13 +246,13 @@
 
         .sub-box {
             padding: 2.5rem;
-            border: 2px solid var(--dark-green); /* Dark green frame */
+            border: 2px solid var(--dark-green);
             border-radius: 12px;
             text-align: center;
             transition: 0.3s;
             background: var(--white);
-            text-decoration: none; /* Remove underline from links */
-            display: block; /* Make the whole box clickable */
+            text-decoration: none;
+            display: block;
         }
 
         .sub-box.inactive {
@@ -306,10 +301,25 @@
             color: #94a3b8;
         }
 
+        /* Contact / consultation form */
+        .contact-wrapper {
+            border: 2px solid var(--dark-green);
+            border-radius: 12px;
+            padding: 1.5rem;
+            background: var(--white);
+        }
+
+        .form-embed {
+            width: 100%;
+            height: 820px;
+            border: none;
+        }
+
         @media (max-width: 900px) {
             .about-grid { grid-template-columns: 1fr; gap: 2rem; }
             section { padding: 100px 5% 60px; }
             .hero-content h1 { font-size: 3rem; }
+            .form-embed { height: 900px; }
         }
     </style>
 </head>
@@ -322,6 +332,7 @@
             <a href="#about">Profile</a>
             <a href="#course">Course</a>
             <a href="#submissions">Work</a>
+            <a href="#contact">Contact</a>
         </div>
     </nav>
 
@@ -417,6 +428,24 @@
         </div>
     </section>
 
+    <!-- NEW CONTACT SECTION -->
+    <section id="contact">
+        <div class="section-header">
+            <h2>Contact for Consultation</h2>
+        </div>
+
+        <div class="contact-wrapper">
+            <iframe
+                class="form-embed"
+                src="https://docs.google.com/forms/d/e/1FAIpQLSfGvcdcEeeDkTklmlrJzVI6OSNj75nBdk0Bj6tLATSzanBqzw/viewform?embedded=true"
+                frameborder="0"
+                marginheight="0"
+                marginwidth="0">
+                Cargando…
+            </iframe>
+        </div>
+    </section>
+
     <footer>
         <p>&copy; 2024 Pilar Ustero | Generative AI for Work & Research Portfolio</p>
         <p style="margin-top: 1rem;">Geneva, Switzerland</p>
@@ -424,3 +453,4 @@
 
 </body>
 </html>
+```
